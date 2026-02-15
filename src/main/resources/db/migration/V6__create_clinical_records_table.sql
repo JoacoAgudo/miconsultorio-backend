@@ -1,0 +1,32 @@
+CREATE TABLE clinical_records (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    patient_id UUID NOT NULL UNIQUE,
+    birth_date DATE,
+    age INTEGER,
+    occupation VARCHAR(255),
+    address TEXT,
+    emergency_contact VARCHAR(255),
+    emergency_phone VARCHAR(50),
+    medical_history TEXT,
+    allergies TEXT,
+    current_medications TEXT,
+    chronic_diseases TEXT,
+    previous_surgeries TEXT,
+    skin_type VARCHAR(50),
+    skin_conditions TEXT,
+    previous_treatments TEXT,
+    sun_exposure VARCHAR(100),
+    tanning_bed_use BOOLEAN,
+    smoking BOOLEAN,
+    alcohol_consumption BOOLEAN,
+    exercise_frequency VARCHAR(100),
+    diet_habits TEXT,
+    initial_observations TEXT,
+    special_considerations TEXT,
+    notes TEXT,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_clinical_record_patient FOREIGN KEY (patient_id) REFERENCES patients(id) ON DELETE CASCADE
+);
+
+CREATE INDEX idx_clinical_records_patient ON clinical_records(patient_id);
