@@ -73,7 +73,8 @@ public class SecurityConfig {
             "http://localhost:3000",
             "http://localhost:3001",
             "http://127.0.0.1:3000",
-            "http://127.0.0.1:3001"
+            "http://127.0.0.1:3001",
+            "https://miconsultorio-frontend.vercel.app" // 👈 PRODUCCIÓN
         ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
