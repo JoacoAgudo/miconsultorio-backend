@@ -33,4 +33,4 @@ jwt:
   expiration: 86400000 # 24 horas en milisegundos
 
 cors:
-  allowed-origins: http://localhost:3000
+  allowed-origins: http://localhost:3000,https://miconsultorio-frontend.vercel.app
